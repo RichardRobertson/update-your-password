@@ -1,0 +1,19 @@
+{
+	"update-your-password": {
+		"tool.title": "Update Your Password",
+		"dialog": {
+			"title": "Update Your Password",
+			"label.contents": "New Password:",
+			"confirm-label.contents": "Confirm Password:",
+			"buttons": {
+				"apply.label": "Apply",
+				"cancel.label": "Cancel"
+			}
+		},
+		"notifications": {
+			"error": {
+				"confirm-not-match": "Passwords do not match. User password not updated."
+			}
+		}
+	}
+}
