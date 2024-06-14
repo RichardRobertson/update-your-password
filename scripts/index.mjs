@@ -12,7 +12,7 @@ function updatePasswordDialog() {
 					const newPassword = html.find('#new-password')[0].value;
 					const confirmPassword = html.find('#new-password')[0].value;
 					if (newPassword !== confirmPassword) {
-						ui.notifications.error('update-your-password.notifications.error.confirm-not-match', { localize: true});
+						ui.notifications.error('update-your-password.notifications.error.confirm-not-match', { localize: true });
 						return;
 					}
 					if (newPassword.length !== 0) {
@@ -36,7 +36,7 @@ Hooks.on('init', function () {
 		scope: 'world',
 		config: true,
 		type: Boolean,
-		default: true,
+		default: false,
 		requiresReload: true
 	});
 	game.settings.register('update-your-password', 'show-user-context-menu', {

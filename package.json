@@ -1,6 +1,6 @@
 {
 	"name": "update-your-password",
-	"version": "1.1.0",
+	"version": "2.0.0",
 	"description": "Foundry VTT module that allows users to update their own password",
 	"repository": {
 		"type": "git",
