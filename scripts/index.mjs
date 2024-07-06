@@ -48,6 +48,15 @@ Hooks.on('init', function () {
 		default: true,
 		requiresReload: true
 	});
+	game.settings.register('update-your-password', 'expose-dialog-function', {
+		name: 'update-your-password.settings.expose-dialog-function.name',
+		hint: 'update-your-password.settings.expose-dialog-function.hint',
+		scope: 'world',
+		config: true,
+		type: Boolean,
+		default: false,
+		requiresReload: true
+	});
 });
 
 Hooks.on('getSceneControlButtons', function (controls) {
@@ -70,4 +79,12 @@ Hooks.on('getUserContextOptions', function (html, contextOptions) {
 		callback: updatePasswordDialog,
 		condition: html => html.attr('data-user-id') === game.userId && game.settings.get('update-your-password', 'show-user-context-menu')
 	});
+});
+
+Hooks.on('ready', function () {
+	if (game.settings.get('update-your-password', 'expose-dialog-function')) {
+		game.updateYourPassword = Object.freeze({
+			showDialog: updatePasswordDialog
+		});
+	}
 });
