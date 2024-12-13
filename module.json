@@ -11,7 +11,7 @@
 	"version": "",
 	"compatibility": {
 		"minimum": 10,
-		"verified": 12
+		"verified": 13
 	},
 	"esmodules": [
 		"scripts/index.mjs"
