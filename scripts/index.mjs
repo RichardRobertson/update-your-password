@@ -10,7 +10,7 @@ function updatePasswordDialog() {
 				label: game.i18n.localize('update-your-password.dialog.buttons.apply.label'),
 				callback: async (html) => {
 					const newPassword = html.find('#new-password')[0].value;
-					const confirmPassword = html.find('#new-password')[0].value;
+					const confirmPassword = html.find('#confirm-new-password')[0].value;
 					if (newPassword !== confirmPassword) {
 						ui.notifications.error('update-your-password.notifications.error.confirm-not-match', { localize: true });
 						return;
