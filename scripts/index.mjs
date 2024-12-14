@@ -99,7 +99,10 @@ Hooks.on("getUserContextOptions", function (html, contextOptions) {
     name: game.i18n.localize("update-your-password.tool.title"),
     icon: '<i class="fa-solid fa-key"></i>',
     callback: updatePasswordDialog,
-    condition: (li) => li[0].dataset.userId === game.userId && game.settings.get(MODULE_ID, "show-user-context-menu"),
+    condition: (li) => {
+      li = li instanceof HTMLElement ? li : li[0];
+      return li.dataset.userId === game.userId && game.settings.get(MODULE_ID, "show-user-context-menu");
+    },
   });
 });
 
