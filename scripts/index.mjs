@@ -18,7 +18,7 @@ function updatePasswordDialog() {
           ${game.i18n.localize("update-your-password.dialog.confirm-label.contents")}
         </label>
         <div class="form-fields">
-          <input id="${MODULE_ID}-confirm-new-password" type="password" name="newPassword">
+          <input id="${MODULE_ID}-confirm-new-password" type="password" name="confirmNewPassword">
         </div>
       </div>		
 		</form>`,
@@ -30,6 +30,7 @@ function updatePasswordDialog() {
         callback: async (html) => {
           const fde = new FormDataExtended(html[0].querySelector("form"));
           const { newPassword, confirmNewPassword } = fde.object;
+          console.warn({ fde });
           if (newPassword !== confirmNewPassword) {
             return ui.notifications.error("update-your-password.notifications.error.confirm-not-match", {
               localize: true,
