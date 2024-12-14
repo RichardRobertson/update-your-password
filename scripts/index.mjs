@@ -30,7 +30,6 @@ function updatePasswordDialog() {
         callback: async (html) => {
           const fde = new FormDataExtended(html[0].querySelector("form"));
           const { newPassword, confirmNewPassword } = fde.object;
-          console.warn({ fde });
           if (newPassword !== confirmNewPassword) {
             return ui.notifications.error("update-your-password.notifications.error.confirm-not-match", {
               localize: true,
