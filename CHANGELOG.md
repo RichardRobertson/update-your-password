@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Code style implemented
+- Courtesy of @esheyw
+    - Various code cleanup
+    - Replaced deprecated `fas` with `fa-solid`
+    - Added form tag wrapper to dialog
+    - Improve dialog ids to better follow HTML standards
+    - Future proofing for FoundryVTT v13
+
 ## [2.2.0] - 2024-12-13
 
 ### Added
