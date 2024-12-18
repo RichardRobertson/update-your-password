@@ -20,8 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Settings menu item to allow exposing the `updatePasswordDialog()` function to macros and scripts
-  - Defaults to false
-  - Exposed at `game.updateYourPassword.showDialog()`
+    - Defaults to false
+    - Exposed at `game.updateYourPassword.showDialog()`
 
 ## [2.0.0] - 2024-06-13
 
@@ -39,7 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Menu option to change password in user list
 - Settings to control visibility of token controls and user list menu items
-  - Both default to true
+    - Both default to true
 - Verified for Foundry VTT 11
 
 ## [1.0.0] - 2022-12-29

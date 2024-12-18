@@ -1,33 +1,33 @@
 name: NodeJS with Gulp
 
 on:
-  push:
-    tags:
-      - "v*.*.*"
+    push:
+        tags:
+            - "v*.*.*"
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v3
+        steps:
+            - uses: actions/checkout@v3
 
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
+            - name: Use Node.js 18.x
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18.x
 
-    - name: Build
-      run: |
-        npm install
-        gulp
+            - name: Build
+              run: |
+                  npm install
+                  gulp
 
-    - name: Get Changelog Entry
-      id: changelog_reader
-      uses: mindsers/changelog-reader-action@v2
+            - name: Get Changelog Entry
+              id: changelog_reader
+              uses: mindsers/changelog-reader-action@v2
 
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        body: ${{ steps.changelog_reader.outputs.changes }}
-        files: dist/*
+            - name: Release
+              uses: softprops/action-gh-release@v1
+              with:
+                  body: ${{ steps.changelog_reader.outputs.changes }}
+                  files: dist/*

@@ -1,33 +1,31 @@
 {
-	"id": "update-your-password",
-	"title": "Update Your Password",
-	"description": "Allows users to update their own password",
-	"authors": [
-		{
-			"name": "Richard Robertson",
-			"url": "https://github.com/RichardRobertson"
-		}
-	],
-	"version": "",
-	"compatibility": {
-		"minimum": 10,
-		"verified": 13
-	},
-	"esmodules": [
-		"scripts/index.mjs"
-	],
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "lang/en.json"
-		}
-	],
-	"url": "https://github.com/RichardRobertson/update-your-password",
-	"manifest": "https://github.com/RichardRobertson/update-your-password/releases/latest/download/module.json",
-	"download": "https://github.com/RichardRobertson/update-your-password/releases/download/v__VERSION__/update-your-password-v__VERSION__.zip",
-	"license": "LICENSE.md",
-	"readme": "README.md",
-	"bugs": "https://github.com/RichardRobertson/update-your-password/issues",
-	"changelog": "https://github.com/RichardRobertson/update-your-password/blob/main/CHANGELOG.md"
+    "id": "update-your-password",
+    "title": "Update Your Password",
+    "description": "Allows users to update their own password",
+    "authors": [
+        {
+            "name": "Richard Robertson",
+            "url": "https://github.com/RichardRobertson"
+        }
+    ],
+    "version": "",
+    "compatibility": {
+        "minimum": 10,
+        "verified": 13
+    },
+    "esmodules": ["scripts/index.mjs"],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "url": "https://github.com/RichardRobertson/update-your-password",
+    "manifest": "https://github.com/RichardRobertson/update-your-password/releases/latest/download/module.json",
+    "download": "https://github.com/RichardRobertson/update-your-password/releases/download/v__VERSION__/update-your-password-v__VERSION__.zip",
+    "license": "LICENSE.md",
+    "readme": "README.md",
+    "bugs": "https://github.com/RichardRobertson/update-your-password/issues",
+    "changelog": "https://github.com/RichardRobertson/update-your-password/blob/main/CHANGELOG.md"
 }

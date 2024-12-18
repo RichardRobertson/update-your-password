@@ -1,25 +1,35 @@
 {
-	"name": "update-your-password",
-	"version": "2.2.0",
-	"description": "Foundry VTT module that allows users to update their own password",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/RichardRobertson/update-your-password.git"
-	},
-	"keywords": [
-		"foundry-vtt",
-		"foundry-vtt-module"
-	],
-	"author": "Richard Robertson",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/RichardRobertson/update-your-password/issues"
-	},
-	"homepage": "https://github.com/RichardRobertson/update-your-password",
-	"devDependencies": {
-		"del": "^7.0.0",
-		"gulp": "^4.0.2",
-		"gulp-json-modify": "^1.0.2",
-		"gulp-zip": "^5.1.0"
-	}
+    "name": "update-your-password",
+    "version": "2.2.0",
+    "description": "Foundry VTT module that allows users to update their own password",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RichardRobertson/update-your-password.git"
+    },
+    "keywords": [
+        "foundry-vtt",
+        "foundry-vtt-module"
+    ],
+    "author": "Richard Robertson",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/RichardRobertson/update-your-password/issues"
+    },
+    "homepage": "https://github.com/RichardRobertson/update-your-password",
+    "devDependencies": {
+        "del": "^7.0.0",
+        "eslint": "^9.17.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "globals": "^15.14.0",
+        "gulp": "^4.0.2",
+        "gulp-json-modify": "^1.0.2",
+        "gulp-zip": "^5.1.0",
+        "prettier": "^3.4.2"
+    },
+    "type": "module",
+    "scripts": {
+        "lint": "eslint",
+        "format": "prettier --write ."
+    }
 }
