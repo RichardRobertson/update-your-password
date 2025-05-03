@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Manual call to `game.logOut()` after setting user password. Seems like v11 and up does not log out when the password changed.
+
 ### Changed
 
 - Code style implemented

@@ -37,6 +37,7 @@ function updatePasswordDialog() {
                     }
                     if (newPassword.length !== 0) {
                         await game.user.update({ password: newPassword });
+                        game.logOut();
                     }
                 },
             },
