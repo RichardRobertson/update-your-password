@@ -16,10 +16,6 @@
             }
         },
         "settings": {
-            "show-token-tool": {
-                "name": "Show token controls tool item.",
-                "hint": "Display a button in the scene token controls toolbar."
-            },
             "show-user-context-menu": {
                 "name": "Show user context menu item.",
                 "hint": "Display an item in the users list right click menu."

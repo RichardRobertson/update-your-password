@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Improve dialog ids to better follow HTML standards
     - Future proofing for FoundryVTT v13
 
+### Removed
+
+- Token tools menu item. Updating password was never a token feature anyway. Makes more sense on user menu or macro call.
+
 ## [2.2.0] - 2024-12-13
 
 ### Added

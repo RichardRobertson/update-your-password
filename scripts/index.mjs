@@ -51,15 +51,6 @@ function updatePasswordDialog() {
 }
 
 Hooks.on("init", function () {
-    game.settings.register(MODULE_ID, "show-token-tool", {
-        name: "update-your-password.settings.show-token-tool.name",
-        hint: "update-your-password.settings.show-token-tool.hint",
-        scope: "world",
-        config: true,
-        type: Boolean,
-        default: false,
-        requiresReload: true,
-    });
     game.settings.register(MODULE_ID, "show-user-context-menu", {
         name: "update-your-password.settings.show-user-context-menu.name",
         hint: "update-your-password.settings.show-user-context-menu.hint",
@@ -78,19 +69,6 @@ Hooks.on("init", function () {
         default: false,
         requiresReload: true,
     });
-});
-
-Hooks.on("getSceneControlButtons", function (controls) {
-    if (game.settings.get(MODULE_ID, "show-token-tool")) {
-        let tokenControls = controls.find((x) => x.name === "token");
-        tokenControls.tools.push({
-            icon: "fa-solid fa-key",
-            name: MODULE_ID,
-            title: game.i18n.localize("update-your-password.tool.title"),
-            button: true,
-            onClick: updatePasswordDialog,
-        });
-    }
 });
 
 Hooks.on("getUserContextOptions", function (html, contextOptions) {

@@ -1,8 +1,6 @@
 # Update Your Password
 
-This module simply adds a new tool to the Token Controls menu or the user list right click menu which allows players to update their passwords while logged in.
-
-![Token Controls menu](resources/readme-control.png)
+This module simply adds a new tool to the user list right click menu which allows players to update their passwords while logged in.
 
 ![User Context Menu](resources/readme-users-list.png)
 
@@ -14,7 +12,7 @@ Settings are available to toggle the visibility of both choices.
 
 ![Settings menu](resources/readme-settings.png)
 
-A third setting has been added to expose the primary `updatePasswordDialog()` function to macros and scripts. It is false by default but can be enabled by the game master. It will be exposed on the primary game object at `game.updateYourPassword.showDialog()` and work exactly the same way as the user invoked version.
+A setting has been added to expose the primary `updatePasswordDialog()` function to macros and scripts. It is false by default but can be enabled by the game master. It will be exposed on the primary game object at `game.updateYourPassword.showDialog()` and work exactly the same way as the user invoked version.
 
 A password must be typed in twice to confirm before applying. If the two entered passwords do not match, an error will be shown and the password will not be changed.
 
