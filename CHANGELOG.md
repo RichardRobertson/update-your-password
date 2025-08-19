@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Menu will now show on any user that the current user has modify permission for. At the time of writing, this appears to be limited to editing one's own user and gamemasters editing other users but checking document update permission seems more future ready.
+
 ## [3.0.0] - 2025-05-03
 
 ### Added

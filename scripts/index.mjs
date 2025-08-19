@@ -1,10 +1,17 @@
 const MODULE_ID = "update-your-password";
 
-function updatePasswordDialog() {
+function updatePasswordDialog(li) {
+    li = li instanceof HTMLElement ? li : li[0];
+    const targetUser = game.users.get(li.dataset.userId);
+    let otherUserHeader = "";
+    if (targetUser.id !== game.user.id) {
+        otherUserHeader = `<h3>${game.i18n.format("update-your-password.dialog.other-user-header", { name: targetUser.name })}</h3>`;
+    }
     new Dialog({
         title: game.i18n.localize("update-your-password.dialog.title"),
         content: `
         <form>
+            ${otherUserHeader}
             <div class="form-group">
                 <label for="${MODULE_ID}-new-password">
                     ${game.i18n.localize("update-your-password.dialog.label.contents")}
@@ -36,8 +43,10 @@ function updatePasswordDialog() {
                         );
                     }
                     if (newPassword.length !== 0) {
-                        await game.user.update({ password: newPassword });
-                        game.logOut();
+                        await targetUser.update({ password: newPassword });
+                        if (targetUser.id === game.user.id) {
+                            game.logOut();
+                        }
                     }
                 },
             },
@@ -79,7 +88,7 @@ Hooks.on("getUserContextOptions", function (html, contextOptions) {
         condition: (li) => {
             li = li instanceof HTMLElement ? li : li[0];
             return (
-                li.dataset.userId === game.userId &&
+                game.users.get(li.dataset.userId).canUserModify(game.user, "update") &&
                 game.settings.get(MODULE_ID, "show-user-context-menu")
             );
         },
