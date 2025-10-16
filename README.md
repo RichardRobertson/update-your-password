@@ -2,7 +2,7 @@
 
 This module simply adds a new tool to the user list right click menu which allows players to update their passwords while logged in.
 
-<video src="resources/readme-users-list.mp4" controls></video>
+https://github.com/user-attachments/assets/612ba46f-31e9-47d6-93d0-a32817be4510
 
 Clicking it will show this very simple dialog.
 
