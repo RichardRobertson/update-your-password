@@ -2,7 +2,7 @@
 
 This module simply adds a new tool to the user list right click menu which allows players to update their passwords while logged in.
 
-![User Context Menu](resources/readme-users-list.png)
+<video src="resources/readme-users-list.mp4" controls></video>
 
 Clicking it will show this very simple dialog.
 
