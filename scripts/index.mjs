@@ -1,8 +1,10 @@
 const MODULE_ID = "update-your-password";
 
-function updatePasswordDialog(_pointerEvent, li) {
-    li = li instanceof HTMLElement ? li : li[0];
-    const targetUser = game.users.get(li.dataset.userId);
+function updatePasswordDialog(userId) {
+    if (userId === undefined || userId === null || userId === "") {
+        userId = game.user.id;
+    }
+    const targetUser = game.users.get(userId);
     let otherUserHeader = "";
     if (targetUser.id !== game.user.id) {
         otherUserHeader = `<h3>${game.i18n.format("update-your-password.dialog.other-user-header", { name: targetUser.name })}</h3>`;
@@ -88,7 +90,10 @@ Hooks.on("getUserContextOptions", function (html, contextOptions) {
     contextOptions.push({
         label: game.i18n.localize("update-your-password.tool.title"),
         icon: '<i class="fa-solid fa-key"></i>',
-        onClick: updatePasswordDialog,
+        onClick(_pointerEvent, li) {
+            li = li instanceof HTMLElement ? li : li[0];
+            updatePasswordDialog(li.dataset.userId);
+        },
         visible: (li) => {
             li = li instanceof HTMLElement ? li : li[0];
             return (
