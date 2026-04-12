@@ -1,14 +1,16 @@
 const MODULE_ID = "update-your-password";
 
-function updatePasswordDialog(li) {
+function updatePasswordDialog(_pointerEvent, li) {
     li = li instanceof HTMLElement ? li : li[0];
     const targetUser = game.users.get(li.dataset.userId);
     let otherUserHeader = "";
     if (targetUser.id !== game.user.id) {
         otherUserHeader = `<h3>${game.i18n.format("update-your-password.dialog.other-user-header", { name: targetUser.name })}</h3>`;
     }
-    new Dialog({
-        title: game.i18n.localize("update-your-password.dialog.title"),
+    new foundry.applications.api.DialogV2({
+        window: {
+            title: game.i18n.localize("update-your-password.dialog.title"),
+        },
         content: `
         <form>
             ${otherUserHeader}
@@ -29,12 +31,13 @@ function updatePasswordDialog(li) {
                 </div>
             </div>
         </form>`,
-        buttons: {
-            apply: {
+        buttons: [
+            {
                 icon: '<i class="fa-solid fa-check"></i>',
+                action: "apply",
                 label: game.i18n.localize("update-your-password.dialog.buttons.apply.label"),
-                callback: async (html) => {
-                    const fde = new FormDataExtended(html[0].querySelector("form"));
+                callback: async (_event, button, _dialogV2) => {
+                    const fde = new foundry.applications.ux.FormDataExtended(button.form);
                     const { newPassword, confirmNewPassword } = fde.object;
                     if (newPassword !== confirmNewPassword) {
                         return ui.notifications.error(
@@ -49,13 +52,14 @@ function updatePasswordDialog(li) {
                         }
                     }
                 },
+                default: true,
             },
-            cancel: {
+            {
                 icon: '<i class="fa-solid fa-times"></i>',
+                action: "cancel",
                 label: game.i18n.localize("update-your-password.dialog.buttons.cancel.label"),
             },
-        },
-        default: "apply",
+        ],
     }).render(true);
 }
 
@@ -82,10 +86,10 @@ Hooks.on("init", function () {
 
 Hooks.on("getUserContextOptions", function (html, contextOptions) {
     contextOptions.push({
-        name: game.i18n.localize("update-your-password.tool.title"),
+        label: game.i18n.localize("update-your-password.tool.title"),
         icon: '<i class="fa-solid fa-key"></i>',
-        callback: updatePasswordDialog,
-        condition: (li) => {
+        onClick: updatePasswordDialog,
+        visible: (li) => {
             li = li instanceof HTMLElement ? li : li[0];
             return (
                 game.users.get(li.dataset.userId).canUserModify(game.user, "update") &&
